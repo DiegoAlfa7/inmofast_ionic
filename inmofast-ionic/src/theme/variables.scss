@@ -4,6 +4,14 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../assets/fonts/roboto.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+$font-family-base: "Roboto";
 
 
 // The app direction is used to include
@@ -34,13 +42,33 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #d32f2f,
+  primary-dark:  #9a0007,
+  primary-light: #ff6659,
+  primary-text: #ffffff,
+  secondary:  #eeeeee,
+  secondary-dark:  #bcbcbc,
+  secondary-light: #ffffff,
+  secondary-text: #000000,
+  danger:     #af2b13,
+  dark:       #222,
+  dark-transparent: rgba(0,0,0,0.1) 
 );
 
+//Colores para los temas 'dark'
+$colors-dark: (
+  primary:    #424242,
+  primary-dark:  #1b1b1b,
+  primary-light: #6d6d6d,
+  primary-text: #ffffff,
+  secondary:  #b71c1c,
+  secondary-dark:  #7f0000,
+  secondary-light: #f05545,
+  secondary-text: #ffffff,
+  danger:     #af2b13,
+  dark:       #222,
+  dark-transparent: rgba(0,0,0,0.1) 
+);
 
 // App iOS Variables
 // --------------------------------------------------

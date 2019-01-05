@@ -1,1 +1,5 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!-- div wrapper that ensures the class thats being aplied to all children -->
+<div class="{{state.state['theme'].theme}}">
+<menu-component [navBinding]="navcontent" [navCtrl]="navcontent" ></menu-component>
+<ion-nav #navcontent [root]="rootPage"></ion-nav>
+</div>

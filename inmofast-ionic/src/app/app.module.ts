@@ -1,39 +1,57 @@
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, MenuController} from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+//Importamos el servicio que nos proporciona el control sobre el estao de la app
+import { AppState } from './app.state';
+//Importamos el módulo de los componentes
+import { ComponentsModule } from '../components/components.module';
+
+
+import {
+  AboutPage,
+  ConfigurationPage,
+  ProfilePage,
+  HomePage,
+  TabsPage
+} from '../pages/pages.index'
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ConfigurationPage
   ],
   imports: [
+    //Angular & Ionic stuff
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //Custom Stuff
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ConfigurationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AppState,
+    MenuController,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
