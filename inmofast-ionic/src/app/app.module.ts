@@ -1,16 +1,16 @@
 
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler, MenuController} from 'ionic-angular';
-import { MyApp } from './app.component';
+import { NgModule, ErrorHandler } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicApp, IonicModule, IonicErrorHandler, MenuController} from "ionic-angular";
+import { MyApp } from "./app.component";
 
-import { NativeStorage } from '@ionic-native/native-storage';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { NativeStorage } from "@ionic-native/native-storage";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
 //Importamos el servicio que nos proporciona el control sobre el estao de la app
-import { AppState } from './app.state';
+import { AppState } from "./app.state";
 //Importamos el módulo de los componentes
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from "../components/components.module";
 
 
 import {
@@ -19,7 +19,7 @@ import {
   ProfilePage,
   HomePage,
   TabsPage
-} from '../pages/pages.index'
+} from "../pages/pages.index";
 
 @NgModule({
   declarations: [
