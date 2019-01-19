@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 
 @Injectable()
 export class AppState{
@@ -10,7 +10,7 @@ export class AppState{
     }
 
     private clone(object){
-        return JSON.parse(JSON.stringify(object))
+        return JSON.parse(JSON.stringify(object));
     }
 
 
@@ -21,14 +21,14 @@ export class AppState{
      * @returns {Object} an object representation of the wanted node
      * @memberof AppState
      */
-    get(prop?:string):Object {
+    get(prop?:string):object {
         const state = this.state;
         return state.prop? state[prop] : state;
     }
 
     set(prop:string,value:any){
         //update the specified state property with the value
-        console.log(prop+': ');
+        console.log(prop+": ");
         console.log(value);
         return this._state[prop] = value;
 

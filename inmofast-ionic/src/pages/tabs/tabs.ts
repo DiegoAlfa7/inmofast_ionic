@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 
 
@@ -6,9 +6,9 @@ import {
   ProfilePage,
   AboutPage,
   HomePage
-} from '../pages.index'
+} from "../pages.index";
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: "tabs.html"
 })
 export class TabsPage {
 
@@ -16,7 +16,6 @@ export class TabsPage {
   tab2Root = AboutPage;
   tab3Root = ProfilePage;
 
-  constructor() {
-
-  }
+  // tslint:disable-next-line:no-empty
+  constructor() { }
 }

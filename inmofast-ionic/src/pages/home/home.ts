@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AppState } from '../../app/app.state';
+import { Component } from "@angular/core";
+import { NavController } from "ionic-angular";
+import { AppState } from "../../app/app.state";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
 
