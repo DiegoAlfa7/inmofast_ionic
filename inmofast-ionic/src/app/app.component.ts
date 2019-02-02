@@ -6,13 +6,14 @@ import {Platform} from "ionic-angular";
 
 import { 
   ConfigurationPage,
-  TabsPage
+  TabsPage,
+  WelcomePage
  } from "../pages/pages.index";
  
 import { STRINGS } from "../constants/strings";
 import { THEMES } from "./../constants/themes.data";
 import { AppState } from "./app.state";
-import { InmoFastAccount } from "./class/interfaces/user_config";
+
 
 @Component({
   templateUrl: "app.html"
@@ -65,6 +66,7 @@ export class MyApp {
       ()=>{
         //Si se ha obtenido la key, ya se habá ejecutado al aplicación al menos una vez
         //aplicamos el flujo convencional
+        this.rootPage = WelcomePage;
 
 
       },

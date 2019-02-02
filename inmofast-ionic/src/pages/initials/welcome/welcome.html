@@ -1,18 +1,45 @@
-<!--
-  Generated template for the WelcomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<ion-slides pager="true" (ionSlideDidChange)="slideChanged()" #signupSlider>
+  <ion-slide padding>
+   <h2 class="welcome-text animated bounceIn">Hola!</h2>
+    <h5 class="welcome-text animated fadeIn" text-center>Bienvenido a <i>InmoFast!</i></h5>
+    
+  </ion-slide>
+  <ion-slide padding>
+   
+    <h2 class="welcome-text" 
+      [ngClass] = "
+        {
+          'animated bounceIn': animationFlags.titleSlide2,
+          'transparent': !animationFlags.titleSlide2
+        }">
+        Acelera tu proceso de trabajo</h2>
+    <h5 class="welcome-text" text-center
+        [ngClass] = "
+        {
+          'animated fadeIn': animationFlags.labelSlide2,
+          'transparent': !animationFlags.labelSlide2
+        }"
+    ><i>Olvídate de papeleos engorrosos, mantente al día</i></h5>
+   
+  </ion-slide>
+  <ion-slide padding>
+    <!-- Hacemos que la clase 'transparent' se aplique hasta que se viaje al slide en cuestión-->
+    <h2 class="welcome-text" [ngClass]="
+            {
+              'animated bounceIn': animationFlags.titleSlide3,
+              'transparent': !animationFlags.titleSlide3
+            }">
+            Mantente Organizado</h2>
+    <h5 class="welcome-text" text-center
+            [ngClass]="
+            {
+              'animated fadeIn': animationFlags.labelSlide3,
+              'transparent': !animationFlags.labelSlide3
+            }"
+    ><i>Lleva todo lo que necesitas para trabajar, en tu smartphone</i></h5>
+    <br/>
+    <div class="animated fadeIn">
+    <a ion-button outline (click)="empecemos()" >Empecemos</a>
+    </div>
+  </ion-slide>
+</ion-slides>

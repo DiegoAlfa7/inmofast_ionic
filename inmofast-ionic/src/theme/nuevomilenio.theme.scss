@@ -5,16 +5,17 @@
     
     //Por defecto, el color de fondo de los elementos generados será el rojo establecido como primario
     background-color: map-get($map: $colors, $key: "primary");
+    //Por defecto el color asociado a los elementos generados será el definido como color primario para el texto
+    color: map-get($map: $colors, $key: "primary-text");
     
     p,
     .toolbar-title,
     .bar-button-default,
     body,
     div {
-      //'transition all' solo se aplica cuando se pinta un elemento, así aparece la primera vez con ese efeto
-      transition: all 0.3s ease;
-      //El color de letra por defecto de los <div> y los <p> formados  
-      color:  map-get($map: $colors, $key: "primary-text");
+      
+      color: map-get($map: $colors, $key: "primary-text");
+
     }
     .onboard {
       border-color:  map-get($map: $colors, $key: "primary");

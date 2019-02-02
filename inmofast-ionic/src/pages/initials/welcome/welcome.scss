@@ -1,3 +1,12 @@
+@import '../../../theme/variables.scss';
+
 page-welcome {
+
+
+    .welcome-text{
+
+         color: map-get($map: $colors, $key: "secondary-text") !important;
+
+    } 
 
 }
