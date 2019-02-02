@@ -11,47 +11,36 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AppState } from "./app.state";
 //Importamos el módulo de los componentes
 import { ComponentsModule } from "../components/components.module";
+import { PagesModule } from "../pages/pages.module";
+import { NativeStorageMock } from "../services/mocks/NativeStorageMock";
 
 
-import {
-  AboutPage,
-  ConfigurationPage,
-  ProfilePage,
-  HomePage,
-  TabsPage
-} from "../pages/pages.index";
+
+
+
+
 
 @NgModule({
   declarations: [
-    MyApp,
-    AboutPage,
-    ProfilePage,
-    HomePage,
-    TabsPage,
-    ConfigurationPage
+    MyApp
   ],
   imports: [
     //Angular & Ionic stuff
     BrowserModule,
     IonicModule.forRoot(MyApp),
     //Custom Stuff
-    ComponentsModule
+    ComponentsModule,
+    PagesModule
+    
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    AboutPage,
-    ProfilePage,
-    HomePage,
-    TabsPage,
-    ConfigurationPage
-  ],
+  entryComponents: [],
   providers: [
     StatusBar,
     SplashScreen,
     AppState,
     MenuController,
-    NativeStorage,
+    {provide: NativeStorage, useClass: NativeStorageMock},
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

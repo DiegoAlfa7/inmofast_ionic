@@ -15,5 +15,8 @@ export class STRINGS{
     //Datos para el acceso a las variables del 'AppState'
     public static readonly STR_APP_THEME = "theme";
 
+    
+    public static readonly STR_ERROR = "ERROR";
+
 
 }

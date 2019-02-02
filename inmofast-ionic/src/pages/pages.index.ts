@@ -4,3 +4,5 @@ export {HomePage} from "./home/home";
 export {AboutPage} from "./about/about";
 export {ProfilePage } from "./profile/profile";
 export {TabsPage} from "./tabs/tabs";
+export {WelcomePage} from "./initials/welcome/welcome";
+export {SinginPage} from "./initials/singin/singin";

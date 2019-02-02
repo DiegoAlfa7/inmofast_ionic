@@ -27,6 +27,13 @@ export class ProfilePage {
 
         this.account = data;
 
+      },
+
+
+      error =>{
+
+        console.log(error);
+
       }
 
     );

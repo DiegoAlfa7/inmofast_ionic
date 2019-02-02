@@ -24,47 +24,7 @@ export class MyApp {
   public ajustesPage:any = ConfigurationPage;
   
 
-  //Este JSON es para fines de prueba, se deberá implementar un fujo par recoger los datos del cliente especificados en la interfaz InmoFasAccount
-  public readonly user_config_data:InmoFastAccount = {
-
-      user: {
-
-        credentials: {
-          username: "diegoa",
-          type: "PW",
-          password: "nuevomilenio",
-          recover: {
-            type: "PW",
-            password: "1234"
-          }
-
-
-        },
-        profile: {
-
-          personal: {
-
-            name: "Diego",
-            sname: "Alfaro Sáez",
-            age: 20,
-            birthDate: "1998-05-20T09:27:05",
-            employment: {
-
-              name: "Agente",
-              description: "Me dedico a la captación de inmuebles"
-
-            }
-
-          }
-
-        }
-
-      }
-    
-
-
-
-  };
+  
 
 
   constructor(

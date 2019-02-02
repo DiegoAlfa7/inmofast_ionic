@@ -1,10 +1,10 @@
-import {IonicModule, NavParams, NavController} from 'ionic-angular';
-import { NgModule } from '@angular/core';
+import {IonicModule, NavParams, NavController} from "ionic-angular";
+import { NgModule } from "@angular/core";
 //Importamos el servicio que nos proporciona el control sobre el estao de la app
-import { AppState } from './../app/app.state';
-import { ListingCardComponent } from './listing-card/listing-card';
-import { CommonModule } from '@angular/common';
-import { MenuComponent } from './menu/menu';
+import { AppState } from "./../app/app.state";
+import { ListingCardComponent } from "./listing-card/listing-card";
+import { CommonModule } from "@angular/common";
+import { MenuComponent } from "./menu/menu";
 
 @NgModule({
     declarations: [

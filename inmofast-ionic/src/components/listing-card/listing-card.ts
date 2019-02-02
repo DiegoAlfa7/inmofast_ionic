@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 /**
  * Generated class for the ListingCardComponent component.
@@ -7,16 +7,16 @@ import { Component } from '@angular/core';
  * Components.
  */
 @Component({
-  selector: 'listing-card',
-  templateUrl: 'listing-card.html'
+  selector: "listing-card",
+  templateUrl: "listing-card.html"
 })
 export class ListingCardComponent {
 
   text: string;
 
   constructor() {
-    console.log('Hello ListingCardComponent Component');
-    this.text = 'Hello World';
+    console.log("Hello ListingCardComponent Component");
+    this.text = "Hello World";
   }
 
 }
