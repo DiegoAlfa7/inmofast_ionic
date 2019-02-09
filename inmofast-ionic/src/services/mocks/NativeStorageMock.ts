@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { STRINGS } from "../../constants/strings";
 import { InmoFastAccount } from "../../app/class/interfaces/user_config";
+import { isObject } from "ionic-angular/umd/util/util";
 
 /**
  *
@@ -20,6 +21,8 @@ import { InmoFastAccount } from "../../app/class/interfaces/user_config";
 export class NativeStorageMock extends NativeStorage{
 
     public getItem(reference: string):Promise<any>{
+
+       console.log("NativeSotrageMock call: getItem( "+reference+" )");
 
        const promesa = new Promise(
 
@@ -64,6 +67,44 @@ export class NativeStorageMock extends NativeStorage{
         );
 
         return promesa;
+    }
+
+
+    /**
+     * Mock para el método setItem de NativeStorage 
+     * 
+     * Únicamente hace un loggeo por consola del elemento que se ha querido añadir con su key
+     * @param {string} refernce
+     * @param {*} value
+     * @returns {Promise<any>}
+     * @memberof NativeStorageMock
+     */
+    public setItem(reference: string, value: any): Promise<any>{
+
+        if (isObject(value)){
+
+            console.log("NativeSotrageMock call: setItem( \" " + reference + "\", \"value\" )");
+            console.log(value);
+
+        }else{
+
+            console.log("NativeSotrageMock call: setItem( \" " + reference + "\", "+value+" )");
+
+        }
+        
+        return new Promise(
+
+            (resolve, reject) => {
+
+                
+                resolve(true);
+
+
+            }
+        );
+
+
+
     }
 
     private readonly lorem_ipsun: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";

@@ -2,6 +2,8 @@ import { Component, ViewChild } from "@angular/core";
 import { NavController, NavParams, MenuController, Slides } from "ionic-angular";
 import { TabsPage } from "../../tabs/tabs";
 import { STRINGS } from "../../../constants/strings";
+import { NewsService } from "../../../services/News.service";
+import { AppState } from "../../../app/app.state";
 
 
 /**
@@ -19,11 +21,7 @@ import { STRINGS } from "../../../constants/strings";
   templateUrl: "welcome.html",
 })
 export class WelcomePage {
- 
-  private slideOpts:any = {
-    effect: "flip"
-  };
-
+  
   
   /**
    *  Usamos este objeto para almacenar los flags que 
@@ -58,12 +56,17 @@ export class WelcomePage {
   @ViewChild("signupSlider") signupSlider: Slides;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public menuCtrl: MenuController
+    public _navCtrl: NavController,
+    public _navParams: NavParams,
+    public _menuCtrl: MenuController,
+    public _newsService:NewsService,
+    public _appState: AppState
     ) {
       //Bloqueamos el menú para que no puedan navegar
-      this.menuCtrl.enable(false, STRINGS.STR_MASTER_MENU);
+      this._menuCtrl.enable(false, STRINGS.STR_MASTER_MENU);
+
+      //antes de mostrar los slides, verificamos que ha sido la primera ejecución de la app
+
 
   }
 
@@ -76,7 +79,8 @@ export class WelcomePage {
     private ionViewWillLeave(){
 
       //Desloqueamos el menú para que puedan navegar
-      this.menuCtrl.enable(true, STRINGS.STR_MASTER_MENU);
+      this._menuCtrl.enable(true, STRINGS.STR_MASTER_MENU);
+      //Comprobamos que no es la  primera ejecución de la aplicación
 
     }
 
@@ -116,7 +120,7 @@ export class WelcomePage {
    */
   private empecemos(){
 
-    this.navCtrl.push(TabsPage);
+    this._navCtrl.push(TabsPage);
 
 
   }

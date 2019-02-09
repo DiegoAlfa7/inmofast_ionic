@@ -2,8 +2,10 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class AppState{
-    _state = {};
+    
+    private _state = {};
 
+    
     //return a clone of state
     get state() {
         return this._state = this.clone(this._state);

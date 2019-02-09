@@ -60,20 +60,25 @@ export class MyApp {
    */
   public checkLocalPreferences(){
 
-    this.nativeStorage.getItem(STRINGS.STR_USER_CONFIG).then(
+    this.nativeStorage.getItem(STRINGS.STR_ERROR).then(
 
       //RESOLVE
       ()=>{
+        
         //Si se ha obtenido la key, ya se habá ejecutado al aplicación al menos una vez
+
+        //1. Comprobamos que no hay noticias más recientes que las ya mostradas
+        //TODO: implementar el flujo que mostrará 'WelcomePage' cuando haya noticias recientes
         //aplicamos el flujo convencional
-        this.rootPage = WelcomePage;
+        this.rootPage = TabsPage;
 
 
       },
       //REJECT
       ()=>{
+        
         //Si no se ha podido obtener la key, activamos el flujo de la primera ejecución
-
+        this.rootPage = WelcomePage;
         //A IMPLEMENTAR
         //this.nativeStorage.setItem(STRINGS.STR_USER_CONFIG, this.user_config_data);
         
