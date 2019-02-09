@@ -1,6 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { NavController, NavParams, MenuController, Slides } from "ionic-angular";
 import { TabsPage } from "../../tabs/tabs";
+import { STRINGS } from "../../../constants/strings";
 
 
 /**
@@ -11,7 +12,7 @@ import { TabsPage } from "../../tabs/tabs";
  * @summary 
  * Esta Página se utilizará para la primera ejecución de la App, antes si quiera de registrar al usuario por primera vez.
  * 
- * En ella se mostrará información referente a las principales funciones de la App y 
+ * En ella se mostrará información referente a las principales funciones de la App con oipción a añadir 'news' 
  */
 @Component({
   selector: "page-welcome",
@@ -23,6 +24,16 @@ export class WelcomePage {
     effect: "flip"
   };
 
+  
+  /**
+   *  Usamos este objeto para almacenar los flags que 
+   *  activarán las animaciones de los distintios elementos
+   *  de la pantalla a su debido tiempo.
+   * 
+   * @private
+   * @type {any}
+   * @memberof WelcomePage
+   */
   private animationFlags : any = {
 
     titleSlide1: true,
@@ -37,6 +48,13 @@ export class WelcomePage {
 
   };
 
+
+  /**
+   * Binding con un elemento de la template de tipo {Slides}
+   * @template
+   * @type {Slides}
+   * @memberof WelcomePage
+   */
   @ViewChild("signupSlider") signupSlider: Slides;
 
   constructor(
@@ -45,14 +63,20 @@ export class WelcomePage {
     public menuCtrl: MenuController
     ) {
       //Bloqueamos el menú para que no puedan navegar
-      this.menuCtrl.enable(false, "masterMenu");
+      this.menuCtrl.enable(false, STRINGS.STR_MASTER_MENU);
 
   }
 
+    /**
+     *
+     * @event LifeHookEvent - Se ejecuta antes de que esta 'Page' se elimine de la primera capa. 
+     * @private
+     * @memberof WelcomePage
+     */
     private ionViewWillLeave(){
 
       //Desloqueamos el menú para que puedan navegar
-      this.menuCtrl.enable(true, "masterMenu");
+      this.menuCtrl.enable(true, STRINGS.STR_MASTER_MENU);
 
     }
 
