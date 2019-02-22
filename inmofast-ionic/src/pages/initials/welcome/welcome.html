@@ -1,4 +1,4 @@
-<ion-slides pager="true" (ionSlideDidChange)="slideChanged()" #signupSlider>
+<ion-slides pager="true" (ionSlideDidChange)="slideChanged()" #beginnerSlides [ngStyle]="{'display': isFirstExecution ? 'auto':'none'}">
   <ion-slide padding>
    <h2 class="welcome-text animated bounceIn">Hola!</h2>
     <h5 class="welcome-text animated fadeIn" text-center>Bienvenido a <i>InmoFast!</i></h5>

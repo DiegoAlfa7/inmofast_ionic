@@ -13,6 +13,7 @@ import { AppState } from "./app.state";
 import { ComponentsModule } from "../components/components.module";
 import { PagesModule } from "../pages/pages.module";
 import { NativeStorageMock } from "../services/mocks/NativeStorageMock";
+import { NewsService } from "../services/News.service";
 
 
 
@@ -41,7 +42,8 @@ import { NativeStorageMock } from "../services/mocks/NativeStorageMock";
     AppState,
     MenuController,
     {provide: NativeStorage, useClass: NativeStorageMock},
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NewsService
   ]
 })
 export class AppModule {}

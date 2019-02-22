@@ -53,8 +53,8 @@ export class MyApp {
    * 
    * 1- Si es o no la primera ejecución de la aplicación
    * 
-   * 2- En caso de que lo sea, el flujo de la aplicación se redirigirá para solicitar
-   * los datos necesarios para la configuración inicial de la aplicación (Datos del agente, credenciles...)
+   * 2- En caso de que lo sea, el flujo de la aplicación se redirigirá para mostrar la pantalla de bienvenida,
+   * las noticias, y más tarde, se abrirá el flujo de registro, o el de sing-in
    *
    * @memberof MyApp
    */

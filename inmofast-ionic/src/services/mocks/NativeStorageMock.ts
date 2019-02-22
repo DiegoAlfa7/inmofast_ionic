@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { STRINGS } from "../../constants/strings";
 import { InmoFastAccount } from "../../app/class/interfaces/user_config";
-import { isObject } from "ionic-angular/umd/util/util";
+
 
 /**
  *
